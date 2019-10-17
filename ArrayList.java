@@ -18,7 +18,7 @@ public class ArrayList<T> implements List<T>{
 		if(size == a.length){
 			growArray();
 		}
-		for(int i = size; i >= pos; i --){
+		for(int i = size; i > pos; i --){
 			a[i] = a[i - 1];
 		}
 		a[pos] = item;
@@ -43,10 +43,10 @@ public class ArrayList<T> implements List<T>{
 	}
 
 	public void growArray(){
-		T[] newArray = (T[]) new Object[a.length * 2];
+		T[] new_array = (T[]) new Object[a.length * 2];
 		for(int i = 0; i < a.length; i++){
-			newArray[i] = a[i];
+			new_array[i] = a[i];
 		}
-		a = newArray;
+		a = new_array;
 	}
 }
