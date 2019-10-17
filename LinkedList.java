@@ -22,7 +22,7 @@ public class LinkedList<T> implements List<T>{
 
 	public void add(T item){
 		if (head == null){
-			Node<T> head = new Node(item);
+			head = new Node(item);
 		} else{
 			Node<T> prev = head;
 			//gets you to last item on the list
@@ -38,6 +38,9 @@ public class LinkedList<T> implements List<T>{
 
 
 	public void add(int pos, T item){
+		if(pos > size || pos < 0){
+			return;
+		}
 		if (pos == 0){
 			Node<T> current = new Node(item);
 			current.next = head;
